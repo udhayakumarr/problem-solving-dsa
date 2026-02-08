@@ -28,29 +28,25 @@ Constraints:
 
 */
 
-
-
 /**
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
+  let min = prices[0];
+  let profit = 0;
 
-    let min = prices[0]
-    let profit = 0
-
-    for(let i = 0; i < prices.length; i++) {
-       
-       if(prices[i] < min) {
-        min = prices[i]
-       }
-
-       const maxProfit = prices[i] - min;
-
-       if(maxProfit > profit) {
-        profit = maxProfit
-       }
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < min) {
+      min = prices[i];
     }
 
-   return profit    
+    const maxProfit = prices[i] - min;
+
+    if (maxProfit > profit) {
+      profit = maxProfit;
+    }
+  }
+
+  return profit;
 };
